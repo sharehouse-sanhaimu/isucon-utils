@@ -18,13 +18,10 @@ create-nginx-link:
 	systemctl daemon-reload
 
 create-mysql-link:
-	mkdir -p /home/isucon/$(REPO_NAME)/etc/mysql/conf.d
-	cp /etc/mysql/conf.d/mysql.cnf /home/isucon/$(REPO_NAME)/etc/mysql/conf.d/
-	cp /etc/mysql/conf.d/mysqldump.cnf /home/isucon/$(REPO_NAME)/etc/mysql/conf.d/
-	mv /etc/mysql/conf.d /etc/mysql/conf.d.bak
-	mkdir /etc/mysql/conf.d
-	ln /home/isucon/$(REPO_NAME)/etc/mysql/conf.d/mysql.cnf /etc/mysql/conf.d/mysql.cnf
-	ln /home/isucon/$(REPO_NAME)/etc/mysql/conf.d/mysqldump.cnf /etc/mysql/conf.d/mysqldump.cnf
+	mkdir -p /home/isucon/$(REPO_NAME)/etc/mysql
+	cp /etc/mysql/mysql.cnf /home/isucon/$(REPO_NAME)/etc/mysql/
+	mv /etc/mysql/mysql.cnf /etc/mysql/mysql.cnf.bak
+	ln /home/isucon/$(REPO_NAME)/etc/mysql/mysql.cnf /etc/mysql/mysql.cnf
 	systemctl restart mysql
 	systemctl daemon-reload
 
