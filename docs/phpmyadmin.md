@@ -14,7 +14,7 @@ vim .env
 ### アクセス許可を付与
 
 ```bash
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo vim /home/isucon/private_isu/etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
 ```diff
