@@ -1,0 +1,4 @@
+CREATE USER 'isucon_admin'@'%' IDENTIFIED BY 'isucon';
+GRANT ALL PRIVILEGES ON *.* TO 'isucon_admin'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
