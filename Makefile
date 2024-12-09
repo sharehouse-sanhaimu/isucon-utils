@@ -35,3 +35,10 @@ restart-nginx:
 
 slow-query-log:
 	sudo mysqldumpslow /var/log/mysql/mysql-slow.log -s t | less
+
+
+
+api-log:
+	sudo cat /var/log/nginx/access.log | alp ltsv --sort sum -r -m "/api/app/rides/[A-Z0-9]+/evaluation,/api/chair/rides/[A-Z0-9]+/status" -o count,method,uri,min,avg,max,sum,4xx,5xx
+
+
